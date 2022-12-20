@@ -1,13 +1,17 @@
-    ;include caps.inc 
-    ;include dups.inc
-    include spaces.inc
-.model small
-.data       
+include caps.inc 
+include dups.inc
+include spaces.inc
+
+.MODEL small
+
+.DATA       
+
 text DB "often time  time  in lIfE,What  is easy to   do is not  worth   worth it ",10,13,"$"
-.code 
+
+.CODE 
  
     MAIN PROC FAR
-        .startup
+        .STARTUP
         
         
         call REMOVE_SPACES
@@ -15,4 +19,5 @@ text DB "often time  time  in lIfE,What  is easy to   do is not  worth   worth i
        .EXIT
        
     MAIN ENDP
+    
 END MAIN
