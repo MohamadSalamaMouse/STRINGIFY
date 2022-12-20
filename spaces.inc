@@ -1,11 +1,20 @@
 .model small
 .data 
 
-	 before DB 'text before removing extra spaces was: ',10,13,'$'  
-	 after DB 'text after removing extra spaces was: ',10,13,'$'  
-
+	before DB 'text before removing extra spaces was: ',10,13,'$'  
+	after DB 'text after removing extra spaces was: ',10,13,'$'  
+	hi_spaces db "Hello from spaces.inc",10,13,"$" ; Remove this
 .code 
 
+	TEST_PROC_SPACES PROC ; Remove this proc
+	
+		LEA DX, hi_spaces
+		MOV AH, 9 		
+		INT 21h 		
+		ret
+	TEST_PROC_SPACES ENDP
+	
+	;-----------------------------
 
 	;1- Remove extra white spaces from the whole text
 	; "Every   thing is	 good,  right?" --> "Every thing is good, right?"
