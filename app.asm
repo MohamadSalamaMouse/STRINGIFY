@@ -13,8 +13,9 @@ text DB "often time  time  in lIfE,What  is easy to   do is not  worth   worth i
     MAIN PROC FAR
         .STARTUP
         
-        
-        call REMOVE_SPACES
+        call TEST_PROC_CAPS
+        call TEST_PROC_DUPS
+        call TEST_PROC_SPACES
             
        .EXIT
        
