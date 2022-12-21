@@ -1,26 +1,20 @@
 .model small
 .data 
-
-	before DB 'text before removing extra spaces was: ',10,13,'$'  
-	after DB 'text after removing extra spaces was: ',10,13,'$'  
-	hi_spaces db "Hello from spaces.inc",10,13,"$" ; Remove this
+	beforeR DB 'text before removing spaces was: ',10,13,'$'  
+	afterR DB 'text after removing spaces was: ',10,13,'$' 
+	beforeD DB 'text before adding spaces was: ',10,13,'$'  
+	afterD DB 'text after adding spaces was: ',10,13,'$'  	
 .code 
 
-	TEST_PROC_SPACES PROC ; Remove this proc
-	
-		LEA DX, hi_spaces
-		MOV AH, 9 		
-		INT 21h 		
-		ret
-	TEST_PROC_SPACES ENDP
-	
-	;-----------------------------
 
-	;1- Remove extra white spaces from the whole text
-	; "Every   thing is	 good,  right?" --> "Every thing is good, right?"
+	
+;--------------------------------------------------------------------------
+;1- Remove extra white spaces from the whole text
+; "Every   thing is	 good,  right?" --> "Every thing is good, right?"
+
 	REMOVE_SPACES PROC far
 	
-		LEA DX , before	
+		LEA DX , beforeR	
 		mov ah , 09
 		int 21h
 	
@@ -68,7 +62,7 @@
 	emptyStringResult:
 		stosb           ; write the '#' at final position
 		
-		LEA DX , after	
+		LEA DX , afterR	
 		mov ah , 09
 		int 21h
 		
@@ -80,18 +74,83 @@
 		
 	REMOVE_SPACES ENDP
 
+;--------------------------------------------------------------------------
+;2- Add white space after punctuations [',', '.', '!', '?']
+;"Every,thing.is good?right." --> "Every, thing. is good? right."
 
-	;2- Add white space after punctuations [',', '.', '!', '?']
-	; "Every,thing.is good?right." --> "Every, thing. is good? right."
-
-	; ADD_SPACES PROC far
-
-		;Your code
-	;	ret
+	 ADD_SPACES PROC far
+	 
+	 	LEA DX , beforeD	
+		mov ah , 09
+		int 21h
 		
-	; ADD_SPACES ENDP
+		LEA DX , text	
+		mov ah , 09
+		int 21h
+		
+		LEA SI, text ; Initialize SI to point to the start of the string
+		LEA DI, AddSpaceOutput ; Initialize DI to point to the start of the output
+		
+	loopp:	
+		MOV AL, [SI] ; Get the character from string 1
+		
+		CMP AL, ',' ; Check if the character is a comma
+		JE ADDSPACE ; If it is, jump to adding a space
+		CMP AL, '!' ; Check if the character is a comma
+		JE ADDSPACE ; If it is, jump to adding a space
+		CMP AL, '?' ; Check if the character is a comma
+		
+		JE ADDSPACE ; If it is, jump to adding a space
+		MOV [DI], AL ; If not, copy the character to the output
+		INC SI ; Increment SI to point to the next character
+		INC DI ; Increment DI to point to the next character
+		CMP AL , '$'
+		JE terminate
+		
+		JMP LOOPp ; Jump back to the start of the loop
+		
+	ADDSPACE:
+		MOV [DI], AL ; Copy the comma to the output
+		INC DI ; Increment DI to point to the next character
+		MOV [DI], ' ' ; Add a space to the output
+		INC DI ; Increment DI to point to the next character
+		INC SI ; Increment SI to point to the next character
+		JMP LOOPp ; Jump back to the start of the loop
+		
+	terminate:	
+	
+		LEA DX , afterD	
+		mov ah , 09
+		int 21h
+		
+		LEA DX , AddSpaceOutput	
+		mov ah , 09
+		int 21h
+		
+	ret
+	
+	
+	ADD_SPACES ENDP
 
 
 
 
 
+
+	; Store the string in a register
+	;LEA si, text
+		
+	; Loop until the end of the string
+	;loop:
+		; Check if the character is a comma
+	;cmp  [si], ','
+	;je add_space
+	; Move to the next character
+	;inc si
+	;jmp loop
+		
+	; Add a space after the comma
+	;add_space:
+	;	mov  [si], ' '
+	;	inc si
+	;	jmp loop
