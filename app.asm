@@ -1,4 +1,4 @@
-;include caps.inc 
+include caps.inc 
 ;include dups.inc
 include spaces.inc
 
@@ -18,6 +18,7 @@ AddSpaceOutput DB ?
         
         ;call REMOVE_SPACES
         call ADD_SPACES
+        call CAPITAL_SMALL
 
             
         .EXIT

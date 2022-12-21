@@ -1,38 +1,55 @@
-.model small
-.data 
+.MODEL SMALL
+.DATA
+MSG db "often  time time  in lIfE, What is easy to  do is not worth worth it.suRe,crashing on the  couch and watcHing the the newest// episode of your favorite show is A  pleasuRable exPerience.but it is bad   input and it it it will not not help you   adVance much in the rOAd to  success.",0
+LEN equ  $ - MSG
+.CODE
+CAPITAL_SMALL PROC FAR
+.STARTUP
+    LEA si, MSG
+    
+    mov bx,0
+    MOV AH,02H
 
-	;Your data items
-	
-	hi_caps db "Hello from caps.inc",10,13,"$" ; Remove this
-	
-.code 
-	
-	TEST_PROC_CAPS PROC ; Remove this proc
-	
-		LEA DX, hi_caps
-		MOV AH, 9 		
-		INT 21h 		
-		ret
-	TEST_PROC_CAPS ENDP
-	
-	;-----------------------------
-
-	; Capitalize the first character of every line
-	; "every thing. is good. Right?" --> "Every thing. Is good. Right?"
-	CAPITALIZE PROC
-
-		;Your code
-		ret
-		
-	CAPITALIZE ENDP
-
-	;-----------------------------
-
-	; Lower case the rest of the sentence
-	; "EVEry tHing IS goOD, right?" --> "Every thing is good, right?"
-	LOWER PROC
-
-		;Your code
-		ret
-		
-	LOWER ENDP
+Next:
+    ; Make frist letter in paragraph capital letter
+    CMP BX,0
+    JNE B
+        MOV DL,[SI+BX];LETTERS
+        AND DL,11011111B
+        INT 21H 
+        INC BX
+    B:
+   
+    ;MOV DL,[SI+BX];LETTERS
+    CALL SMALL_LETTER
+    INT 21H
+     ;condition to know beginning of each sentence
+    CMP DL,'.'
+    JNE A
+        CALL CAPS
+    A:
+  
+  
+    INC     bx
+    CMP     bx, LEN
+    JNE     Next
+    
+    
+    .EXIT
+CAPITAL_SMALL ENDP
+      ;SMALL METHOD CONVERT CAPTIAL LETTER TO SMALL LETTER
+    SMALL_LETTER PROC NEAR
+        OR [si + bx],00100000B
+        MOV     DL,[si + bx]
+        RET
+    SMALL_LETTER ENDP
+     ;to make capital letter at the beginning of each sentence
+    CAPS PROC NEAR
+     INC     bx
+     MOV DL,[SI+BX];LETTERS
+     AND DL,11011111B
+     INT 21H 
+    RET 
+    CAPS ENDP
+    
+END CAPITAL_SMALL
