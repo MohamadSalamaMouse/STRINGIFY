@@ -1,23 +1,26 @@
-include caps.inc 
-include dups.inc
+;include caps.inc 
+;include dups.inc
 include spaces.inc
 
 .MODEL small
 
 .DATA       
 
-text DB "often time  time  in lIfE,What  is easy to   do is not  worth   worth it ",10,13,"$"
+text DB "time  !time  in lIfE,What  is  easy to   do is not  worth worth?it ",10,13,"$"
+RemoveSpaceOutput DB ? 
+AddSpaceOutput DB ?
+ 
 
 .CODE 
  
     MAIN PROC FAR
         .STARTUP
         
-        call TEST_PROC_CAPS
-        call TEST_PROC_DUPS
-        call TEST_PROC_SPACES
+        ;call REMOVE_SPACES
+        call ADD_SPACES
+
             
-       .EXIT
+        .EXIT
        
     MAIN ENDP
     
