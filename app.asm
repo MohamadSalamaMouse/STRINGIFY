@@ -1,4 +1,4 @@
-include caps.inc 
+;include caps.inc 
 ;include dups.inc
 include spaces.inc
 
@@ -6,9 +6,10 @@ include spaces.inc
 
 .DATA       
 
-text DB "time  !time  in lIfE,What  is  easy to   do is not  worth worth?it ",10,13,"$"
-RemoveSpaceOutput DB ? 
+text DB "time  !tIMe  in lIfE   ,What  is  ea    .sy to   do is not  worth      worth?it ",10,13,"$"
 AddSpaceOutput DB ?
+;RemoveSpaceOutput DB ? 
+
  
 
 .CODE 
@@ -16,9 +17,11 @@ AddSpaceOutput DB ?
     MAIN PROC FAR
         .STARTUP
         
-        ;call REMOVE_SPACES
+        ;call CAPITAL_SMALL
+        call REMOVE_SPACES
         call ADD_SPACES
-        call CAPITAL_SMALL
+
+
 
             
         .EXIT
