@@ -22,7 +22,7 @@ data or text and reach the required format.
 - Finding substrings & concatenating strings
  
 
-<h3 align="center"> What we are trying to do here is  creating a command line interface <i>-text Editor-</i> which also has the ability to perform some string manipulation techniques</h3>
+<h3 align="center"> What we are trying to do here is  creating a command line interface <i>-Text Editor-</i> which also has the ability to perform some string manipulation techniques</h3>
 
 
 
