@@ -6,7 +6,8 @@ data or text and reach the required format.
  It can involve small actions like:
  - Rearranging white spaces
  - Deleting duplicated words
- - Replacing incorrect words 
+ - Replacing incorrect words
+ 
 **What we are trying to do here is to create a command line text editor interface with the ability to perform some String manipulation techniques**
 
 
