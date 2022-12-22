@@ -8,10 +8,10 @@ include UI.inc
 
 .DATA       
 
-TEXT DB "often time time  in lIfE, What  is eASy to  do is,not worTH worth it.SuRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
-Back_TO_Options DB"1-Go Back To Main Menu",10,13,"$"
+TEXT DB "often time time  in lIfE, What  is eASy to  do is,not worTH worth it.suRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
+Back_TO_Options DB"0-Go Back To Main Menu",10,13,"$"
 INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
-ExitST DB "2-Exit the program",10,13,"$"
+ExitST DB "5-Exit the program",10,13,"$"
 TEXT_LEN EQU  $ - TEXT
 NEWLINE DB 10,13,"$"
 
@@ -135,9 +135,9 @@ FINAL_OUTPUT DB 255 DUP('$')
 
 
             
-            CMP AL, '1'
+             CMP AL, '0'
             jz  Rendering
-            CMP AL, '2'
+            CMP AL, '5'
             JE TERM
 
         
