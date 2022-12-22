@@ -30,12 +30,12 @@ StringIFY is a String manipulation program which we developed in 8086 assembly l
 
 StringIFY program consist of main.asm file 
 
-##### Notes: StringIFY program has an input data limitaion of ?? cause it data size exceed limitation we will face overflow excption so please ,don't try to use data size above the limitation
+##### Notes: StringIFY program has an input data limitaion of ?? cause it data size exceed limitation we will face overflow excption
 
 
 |  Program Flow-chart             | 
 | -------             |
-| <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.jpg" width="1000" />   | 
+| <img src="https://raw.githubusercontent.com/MohamadSalamaMouse/Natural-Language-Processing/white_spaces/resources/Photos/Activitydiagram1.png?token=GHSAT0AAAAAAB36FIYGII3S2Y44C533BH4YY5EGKLA" width="1000" />   | 
 
 
 
