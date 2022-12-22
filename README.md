@@ -35,10 +35,10 @@ STRINGIFY program consist of main.asm file
 <p dir="auto"><strong>caps.inc  >>The beginning of the sentence is a capital letter and the rest of the sentence is lowercase to all sentences</strong></p>
 </li>
 <li>
-<p dir="auto"><strong>dups.inc</strong></p>
+<p dir="auto"><strong>dups.inc  >>remove duplicates</strong></p>
 </li>
 <li>
-<p dir="auto"><strong>spaces.inc</strong></p>
+<p dir="auto"><strong>spaces.inc  >>remove extra white spaces && add white space after punctuation marks</strong></p>
 </li>
 <li>
 <p dir="auto"><strong>ui.inc</strong></p>
