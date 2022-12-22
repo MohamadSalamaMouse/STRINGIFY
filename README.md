@@ -31,11 +31,11 @@ String-manipulation also involve more complicated tasks like:
 
 title 1             |  title 2 
 :-------------------------:|:-------------------------:
-  <img src="/img1.png" width="100" />  |    <img src="/img1.png" width="100" />
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.jpg" width="500" />
 
 title 3             |  title 4 
 :-------------------------:|:-------------------------:
-  <img src="/img1.png" width="100" />  |    <img src="/img1.png" width="100" />
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
 
 
 
