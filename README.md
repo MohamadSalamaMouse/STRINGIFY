@@ -1,11 +1,16 @@
 
+# INTRO
 
+
+=======
 # Introduction
 
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
- <br>
 
+
+
+=======
 
 ##### String-manipulation can be used to perform small actions like:
 
@@ -25,12 +30,17 @@ data or text and reach the required format.
 <h3 align="center"> What we are trying to do here is  creating a command line interface <i>-Text Editor-</i> which also has the ability to perform some string manipulation techniques</h3>
 
 
+## STRINGIFY Documentation
+StringIFY is a String manipulation program which we developed in 8086 assembly language to 
+
+StringIFY program consist of main.asm file 
+
+##### Notes: StringIFY program has an input data limitaion of ?? cause it data size exceed limitation we will face overflow excption
 
 
-
-
-## Screenshots
-
+|  Program Flow-chart             | 
+| -------             |
+| <img src="https://raw.githubusercontent.com/MohamadSalamaMouse/Natural-Language-Processing/white_spaces/resources/Photos/Activitydiagram1.png?token=GHSAT0AAAAAAB36FIYGII3S2Y44C533BH4YY5EGKLA" width="1000" />   | 
 
 
 Read & Write Data from and to Files directly             |  Position punctuation marks & correct capitalization 
@@ -42,20 +52,38 @@ Read & Write Data from and to Files directly             |  Position punctuation
   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
 
 
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
+##### Recommended future development
+-
+-
 
 
 ## Features
-
 - Read & Write Data from and to Files directly
 - Position punctuation marks & correct capitalization 
 - Remove extra white spaces & add spaces if it's required
 - Remove successive duplicate words & incorrect symbols from the string
 
 
+
+## Screenshots
+
+Readstring from and to Files directly             |  Position punctuation marks & correct capitalization 
+:-------------------------:|:-------------------------:
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.jpg" width="500" />
+
+ Remove & add extra white spaces if it's needed          |  Remove successive duplicate words  
+:-------------------------:|:-------------------------:
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
+
+
+## Run Locally
+
+1- Clone the project
+
+```bash
+  git clone https://github.com/MohamadSalamaMouse/Natural-Language-Processing.git
+```
+=======
 ## Authors
 #### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
 - [@Mohamad Salama Mouse | section 8](https://github.com/MohamadSalamaMouse)
@@ -63,7 +91,25 @@ Read & Write Data from and to Files directly             |  Position punctuation
 - [@Mohamed Abo El-Seoud | Section 8](https://github.com/MAES-Pyramids)
 
 
+2- Go to the project directory
+
+```bash
+  cd Natural-Language-Processing
+```
+
+3- Then run the main.asm using any 8086 assembler.
+#### Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
+
+
+## Demo video
+To get more information we have a demo video uploaded on google drive for a little bit more explanation, you reach video by pressing [Here]()
+
 ## Feedback
+IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
 
-If you have any feedback, please reach out to us at fake@fake.com
+## Team Members
 
+#### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
+- [@Mohamad Salama Mouse | section 8](https://github.com/MohamadSalamaMouse)
+- [@Ahmed Mohsen   | Section  ?](https://github.com/PrinceEGY)
+- [@Mohamed Abo El-Seoud | Section 8](https://github.com/MAES-Pyramids)
