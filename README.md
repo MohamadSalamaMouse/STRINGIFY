@@ -28,11 +28,11 @@ STRINGIFY program consist of main.asm file
 ## program files
 <ol dir="auto">
 <li>
-<p dir="auto"><strong>app.asm</strong></p>
+<p dir="auto"><strong>app.asm </strong></p>
 </li>
  
 <li>
-<p dir="auto"><strong>caps.inc</strong></p>
+<p dir="auto"><strong>caps.inc  >>The beginning of the sentence is a capital letter and the rest of the sentence is lowercase to all sentences</strong></p>
 </li>
 <li>
 <p dir="auto"><strong>dups.inc</strong></p>
