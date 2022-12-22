@@ -39,7 +39,7 @@ FINAL_OUTPUT DB 255 DUP('$')
         GET_OPTION:
              LEA DX, NEWLINE
              CALL PRINT
-             CALL PRINT
+
 
             LEA DX,INPUTLINE
             CALL PRINT
@@ -62,7 +62,8 @@ FINAL_OUTPUT DB 255 DUP('$')
             JE OPT_5
             
             OPT_1:
-            
+                LEA DX, L5
+                CALL PRINT
                 CALL CAPITAL_SMALL
                 LEA DX, FINAL_OUTPUT
                 CALL PRINT
@@ -71,7 +72,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 JMP Continue_option
                 
             OPT_2:
-            
+                LEA DX, L5
+                CALL PRINT
                 CALL ADD_SPACES
                 CALL REMOVE_SPACES
                 LEA DX, FINAL_OUTPUT
@@ -81,7 +83,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 JMP Continue_option
                 
             OPT_3: 
-            
+                LEA DX, L5
+                CALL PRINT
                 CALL REMOVE_DUP
                 LEA DX, FINAL_OUTPUT
                 CALL PRINT
@@ -90,7 +93,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 JMP Continue_option
                 
             OPT_4:
-            
+                LEA DX, L5
+                CALL PRINT
                 CALL CAPITAL_SMALL
                 CALL REMOVE_DUP
                 CALL ADD_SPACES
@@ -126,6 +130,7 @@ FINAL_OUTPUT DB 255 DUP('$')
              CALL PRINT
              CALL PRINT
              CALL PRINT
+
 
 
 
