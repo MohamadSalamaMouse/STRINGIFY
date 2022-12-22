@@ -22,9 +22,9 @@ data or text and reach the required format.
 ---
 
 ## STRINGIFY Documentation
-StringIFY is a String manipulation program which we developed in 8086 assembly language to 
+STRINGIFY is a String manipulation program which we developed in 8086 assembly language to 
 
-StringIFY program consist of main.asm file 
+STRINGIFY program consist of main.asm file 
 
 
 
@@ -72,8 +72,7 @@ Readstring from and to Files directly             |  Position punctuation marks 
   cd Natural-Language-Processing
 ```
 
-3- Then run the main.asm using any 8086 assembler.
-#### Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
+3- Then run the main.asm using any 8086 assembler. note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
 
 ---
 ## Demo video
