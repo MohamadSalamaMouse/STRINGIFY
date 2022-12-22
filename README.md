@@ -25,7 +25,24 @@ data or text and reach the required format.
 STRINGIFY is a String manipulation program which we developed in 8086 assembly language to 
 
 STRINGIFY program consist of main.asm file 
-
+program files
+<ul dir="auto">
+<li>
+<p dir="auto"><strong>app.asm</strong></p>
+</li>
+<li>
+<p dir="auto"><strong>caps.inc</strong></p>
+</li>
+<li>
+<p dir="auto"><strong>dups.inc</strong></p>
+</li>
+<li>
+<p dir="auto"><strong>spaces.inc</strong></p>
+</li>
+<li>
+<p dir="auto"><strong>ui.inc</strong></p>
+</li>
+</ul>
 
 
 
