@@ -26,11 +26,11 @@ data or text and reach the required format.
 
 
 ## STRINGIFY Documentation
-Stringify is a String manipulation program can 
+StringIFY is a String manipulation program which we developed in 8086 assembly language to 
 
-Stringify program consist of main.asm file 
+StringIFY program consist of main.asm file 
 
-##### Notes: StringIFY program has an input data limitaion of  or we will face overflow excption so please ,don't try to use data size above the limitation
+##### Notes: StringIFY program has an input data limitaion of ?? cause it data size exceed limitation we will face overflow excption so please ,don't try to use data size above the limitation
 
 
 |  Program Flow-chart             | 
