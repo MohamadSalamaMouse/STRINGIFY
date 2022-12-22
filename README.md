@@ -1,5 +1,5 @@
 
-# INTRO
+# Introduction
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
 
@@ -21,7 +21,7 @@ data or text and reach the required format.
 
 ---
 
-## STRINGIFY Documentation
+##  STRINGIFY Documentation
 STRINGIFY is a String manipulation program that we developed in 8086 assembly language to perform some common text manipulation processes.
 
 STRINGIFY program consists of main.asm file where we reference and include all other files and functions and we also have four files more which are : 
@@ -53,10 +53,10 @@ STRINGIFY program consists of main.asm file where we reference and include all o
 
 
 ### Implemented Features
-- Read & Write Data from and to Files directly
-- make the first character of every line cap & make the rest of the line small 
-- Remove extra white spaces & add spaces if it's required
-- Remove successive duplicate words & incorrect symbols from the string
+- File handling (Data Reading and Writing to and from Files directly) 
+- Make the first character in the sentence capitalized and make the rest of the letters small
+- Remove extra white spaces and add spaces after punctuation marks
+- Remove successive duplicate words
 
 ### Recommended future Features
 - Implementing spelling Corrections  and grammar rules validation
