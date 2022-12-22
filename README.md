@@ -17,32 +17,32 @@ data or text and reach the required format.
 - Finding substrings & concatenating strings
  
 
-<h3 align="center"> What we are trying to do here is  creating a command line interface <i>-Text Editor-</i> which also has the ability to perform some string manipulation techniques</h3>
+<h3 align="center"> What we are trying to do here is  creating a command line interface -Text Editor- which also has the ability to perform some string manipulation techniques</h3>
 
 ---
 
 ## STRINGIFY Documentation
-STRINGIFY is a String manipulation program which we developed in 8086 assembly language to 
+STRINGIFY is a String manipulation program that we developed in 8086 assembly language to perform some common text manipulation processes.
 
-STRINGIFY program consist of main.asm file 
-## program files
+STRINGIFY program consists of main.asm file where we reference and include all other files and functions and we also have four files more which are : 
 <ol dir="auto">
 <li>
-<p dir="auto"><strong>app.asm </strong></p>
+<p dir="auto"><strong>ui.inc ------->></strong>The main file used for rendering the program, also includes rendering related functions such as function implement delay </p>
 </li>
  
 <li>
-<p dir="auto"><strong>caps.inc  >>The beginning of the sentence is a capital letter and the rest of the sentence is lowercase to all sentences</strong></p>
+<p dir="auto"><strong>caps.inc  ---->></strong>Includes functions to capitalize the beginning of the sentence and be sure that the rest of the sentence litters is lowercase  </p>
 </li>
+
 <li>
-<p dir="auto"><strong>dups.inc  >>remove duplicates</strong></p>
+<p dir="auto"><strong>spaces.inc  -->></strong>Includes functions to remove extra white spaces  and also add white space after common punctuation marks</p>
 </li>
+
 <li>
-<p dir="auto"><strong>spaces.inc  >>remove extra white spaces && add white space after punctuation marks</strong></p>
+<p dir="auto"><strong>dups.inc ---->></strong>Includes functions to remove successive duplicates words</p>
 </li>
-<li>
-<p dir="auto"><strong>ui.inc</strong></p>
-</li>
+
+
 </ol>
 
 
@@ -59,21 +59,22 @@ STRINGIFY program consist of main.asm file
 - Remove successive duplicate words & incorrect symbols from the string
 
 ### Recommended future Features
--
+- Implementing spelling Corrections  and grammar rules validation
 -
 
-#### Notes: StringIFY program has an input data limitaion of ?? cause if data size exceed limitation we will face overflow excption
+#### <p align="center">Note: STRINGIFY program has an input data size limitation of 250 bytes which means that the data processed by the program can't be more than 250 bytes or we will face an overflow exception if the data size exceeds the limitation</p>
+   
 ---
 
 ## Screenshots
 
-Readstring from and to Files directly             |  Position punctuation marks & correct capitalization 
+ Correct capitalization rules            |  Remove & add  white spaces  
 :-------------------------:|:-------------------------:
-  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.jpg" width="500" />
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.png" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.png" width="500" />
 
- Remove & add extra white spaces if it's needed          |  Remove successive duplicate words  
+Remove successive duplicate words            |  Execute all operations together
 :-------------------------:|:-------------------------:
-  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
+  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png" width="500" />
 
 
 ## Run Locally
@@ -90,11 +91,11 @@ Readstring from and to Files directly             |  Position punctuation marks 
   cd Natural-Language-Processing
 ```
 
-3- Then run the main.asm using any 8086 assembler. note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
+3- Then run the main.asm using any 8086 assembler. Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
 
 ---
 ## Demo video
-To get more information we have a demo video uploaded on google drive for a little bit more explanation, you can access video by pressing [Here]()
+To get more information we uploaded a demo video  on google drive for a little bit more explanation, you can access video by pressing [Here]()
 
 ## Feedback
 IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
@@ -103,7 +104,7 @@ IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.m
 ## Team Members
 
 #### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
-- [@Mohamad Salama Mouse | section 8](https://github.com/MohamadSalamaMouse)
-- [@Ahmed Mohsen  Awad | Section 1 ](https://github.com/PrinceEGY)
-- [@Mohamed Abo El-Seoud | Section 8](https://github.com/MAES-Pyramids)
+- [@Mohamad Salama Mouse ](https://github.com/MohamadSalamaMouse) | section 8
+- [@Ahmed Mohsen Awad     ](https://github.com/PrinceEGY)     | Section 1
+- [@Mohamed Abo El-Seoud ](https://github.com/MAES-Pyramids) | Section 8
 
