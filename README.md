@@ -91,7 +91,7 @@ Remove successive duplicate words            |  Execute all operations together
   cd Natural-Language-Processing
 ```
 
-3- Then run the main.asm using any 8086 assembler. Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
+3- Run the main.asm using any 8086 assembler. Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
 
 ---
 ## Demo video
@@ -105,6 +105,6 @@ IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.m
 
 #### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
 - [@Mohamad Salama Mouse ](https://github.com/MohamadSalamaMouse) | section 8
-- [@Ahmed Mohsen Awad     ](https://github.com/PrinceEGY)     | Section 1
+- [@Ahmed Mohsen Awad    ](https://github.com/PrinceEGY)     | Section 1
 - [@Mohamed Abo El-Seoud ](https://github.com/MAES-Pyramids) | Section 8
 
