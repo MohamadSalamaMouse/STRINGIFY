@@ -4,7 +4,7 @@
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
 
- <br>
+
 
 
 ##### String-manipulation can be used to perform small actions like:
@@ -32,13 +32,10 @@ Stringify is a String manipulation program
 Stringify program consist of main.asm file 
 
 
-efgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvv
+
+##### Notes: String size has  maximum value of entered element is 65536 (best case)
 
 
-
-#### Notes: String size has  maximum value of entered element is 65536 (best case)
-
-<br>
 
 
 |  Program Flow-chart             | 
@@ -47,11 +44,18 @@ efgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfvvefgrevfv
 
 
 
-
-
-#### Recommended future development
+##### Recommended future development
 -
 -
+
+
+## Features
+
+- Read & Write Data from and to Files directly
+- Position punctuation marks & correct capitalization 
+- Remove extra white spaces & add spaces if it's required
+- Remove successive duplicate words & incorrect symbols from the string
+
 
 ## Screenshots
 
@@ -64,13 +68,6 @@ Readstring from and to Files directly             |  Position punctuation marks 
   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
 
 
-
-## Features
-
-- Read & Write Data from and to Files directly
-- Position punctuation marks & correct capitalization 
-- Remove extra white spaces & add spaces if it's required
-- Remove successive duplicate words & incorrect symbols from the string
 ## Run Locally
 
 1- Clone the project
@@ -90,10 +87,10 @@ Readstring from and to Files directly             |  Position punctuation marks 
 
 
 ## Demo video
+To get more information we have a demo video uploaded on google drive for explaning project more, you reach video by pressing [Here]()
 
-You can view a demo video for project uploaded on google drive by pressing [Here](https://maes-forkify.netlify.app/)
-
-
+## Feedback
+IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
 
 ## Team Members
 
@@ -101,7 +98,3 @@ You can view a demo video for project uploaded on google drive by pressing [Here
 - [@Mohamad Salama Mouse | section 8](https://github.com/MohamadSalamaMouse)
 - [@Ahmed Mohsen   | Section  ?](https://github.com/PrinceEGY)
 - [@Mohamed Abo El-Seoud | Section 8](https://github.com/MAES-Pyramids)
-## Feedback
-
-IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
-
