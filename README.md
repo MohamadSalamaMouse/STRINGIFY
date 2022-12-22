@@ -62,7 +62,7 @@ STRINGIFY program consists of main.asm file where we reference and include all o
 - Implementing spelling Corrections  and grammar rules validation
 -
 
-#### <p align="center">Note: STRINGIFY program has an input data size limitation of 250 bytes which means that the data processed by the program can't be more than 250 bytes or we will face an overflow exception if the data size exceeds the limitation</p>
+#### <p align="center">Note: STRINGIFY program has an input data size limitation of 250 bytes which means that the data processed by the program can't be more than 250 character or we will face an overflow exception if the data size exceeds the limitation</p>
    
 ---
 
