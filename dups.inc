@@ -15,7 +15,7 @@
 	; "Every Every thing is good, right right?" --> "Every thing is good, right?"
 	REMOVE_DUP PROC 
 
-		LEA SI, TEXT
+		LEA SI, FINAL_OUTPUT
 		CHECK:
 			CMP BYTE PTR [SI], '$'
 			JZ EXIT

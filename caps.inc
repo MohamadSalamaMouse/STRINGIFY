@@ -36,13 +36,14 @@ Next1:
     INC     bx
     CMP     bx, TEXT_LEN
     JNE     Next1
-   
-  
+	
+    RET
+CAPITAL_SMALL ENDP  
 
       ;SMALL METHOD CONVERT CAPTIAL LETTER TO SMALL LETTER
       ;--------------------------------------------------
     SMALL_LETTER PROC NEAR
-        OR [si + bx],00100000B
+        OR BYTE PTR [si + bx],00100000B
         MOV     DL,[si + bx]
         RET
     SMALL_LETTER ENDP
