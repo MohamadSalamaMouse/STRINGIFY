@@ -3,14 +3,19 @@ include dups.inc
 include spaces.inc
 include UI.inc
 
+.386
 .MODEL small
 
 .DATA       
 
-TEXT DB "often  time time  in lIfE, What  is eASy to  do is,not worTH worth it.SuRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
+TEXT DB "often time time  in lIfE, What  is eASy to  do is,not worTH worth it.SuRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
+Back_TO_Options DB"1-Go Back To Main Menu",10,13,"$"
 INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
+ExitST DB "2-Exit the program",10,13,"$"
 TEXT_LEN EQU  $ - TEXT
 NEWLINE DB 10,13,"$"
+
+
 FINAL_OUTPUT DB 255 DUP('$')
 
 .CODE 
@@ -25,10 +30,17 @@ FINAL_OUTPUT DB 255 DUP('$')
         CALL SAVE_TEXT
         
         ;----------------------
-        CALL WAKE_UP
+        Rendering :
+            LEA DX, NEWLINE
+            CALL PRINT 
+            CALL WAKE_UP
+            CALL OPTIONS
         
         GET_OPTION:
-            CALL OPTIONS
+             LEA DX, NEWLINE
+             CALL PRINT
+             CALL PRINT
+
             LEA DX,INPUTLINE
             CALL PRINT
             
@@ -36,8 +48,7 @@ FINAL_OUTPUT DB 255 DUP('$')
             INT 21H
             LEA DX, NEWLINE
             CALL PRINT
-            CALL PRINT
-            CALL PRINT
+
             
             CMP AL, '1'
             JE OPT_1
@@ -57,7 +68,7 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL PRINT
                 LEA DX, NEWLINE
                 CALL PRINT
-                JMP GET_OPTION
+                JMP Continue_option
                 
             OPT_2:
             
@@ -67,7 +78,7 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL PRINT
                 LEA DX, NEWLINE
                 CALL PRINT
-                JMP GET_OPTION
+                JMP Continue_option
                 
             OPT_3: 
             
@@ -76,7 +87,7 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL PRINT
                  LEA DX, NEWLINE
                  CALL PRINT
-                JMP GET_OPTION
+                JMP Continue_option
                 
             OPT_4:
             
@@ -88,17 +99,44 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL PRINT
                 LEA DX, NEWLINE;NEW LINE
                 CALL PRINT
-                JMP GET_OPTION
+                JMP Continue_option
                 
             OPT_5:
-            
-                JMP TERM            
+                JMP TERM    
+                
         
         ;----------------------
+        Continue_option:
+            LEA DX,Back_TO_Options
+            call print
+            LEA DX,ExitST
+            call print
+            
+            LEA DX, NEWLINE
+            CALL PRINT
         
-        TERM:
+            LEA DX,INPUTLINE
+            CALL PRINT
+                
+            MOV AH,1
+            INT 21H
+            
+             LEA DX, NEWLINE
+             CALL PRINT
+             CALL PRINT
+             CALL PRINT
+             CALL PRINT
+
+
 
             
+            CMP AL, '1'
+            jz  Rendering
+            CMP AL, '2'
+            JE TERM
+
+        
+        TERM:
         .EXIT
        
     MAIN ENDP
