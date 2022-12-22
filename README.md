@@ -7,14 +7,14 @@ data or text and reach the required format.
  <br>
 
 
- It used to perform small actions like:
+ String-manipulation can be used to perform small actions like:
 <img align="right" alt="GIF" height="160px" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" /> 
  - Rearranging white spaces
  - Positioning punctuation marks
  
 
 
-It also involve more complicated tasks like: 
+String-manipulation also involve more complicated tasks like: 
 - Removing duplicated words
 - Correcting spelling and grammar rules
 - Finding substrings & concatenating strings
