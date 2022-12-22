@@ -7,11 +7,11 @@ CAPITAL_SMALL PROC
 
 
    ; CALL POINT
-    LEA si, text
+    LEA si, FINAL_OUTPUT
     mov bx,0
     MOV AH,02H
 
-Next:
+Next1:
     ; Make frist letter in paragraph capital letter
     
     CMP BX,0
@@ -19,13 +19,13 @@ Next:
         MOV DL,[SI+BX];LETTERS
         AND DL,11011111B
 		MOV [SI+BX],DL
-        INT 21H 
+        ;--INT 21H 
         INC BX
     B:
    
     ;MOV DL,[SI+BX];LETTERS
     CALL SMALL_LETTER
-    INT 21H
+  ;---  INT 21H
      ;condition to know beginning of each sentence
     CMP DL,'.'
     JNE A
@@ -34,8 +34,8 @@ Next:
   
   
     INC     bx
-    CMP     bx, HELLO_LEN
-    JNE     Next
+    CMP     bx, TEXT_LEN
+    JNE     Next1
    
   
 
@@ -53,7 +53,7 @@ Next:
      MOV DL,[SI+BX];LETTERS
      AND DL,11011111B
 	 MOV [SI+BX],DL
-     INT 21H 
+    ;--- INT 21H 
     RET 
     CAPS ENDP
     ;move postion of pointer
