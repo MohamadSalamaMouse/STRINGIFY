@@ -1,22 +1,24 @@
 .MODEL SMALL
-.DATA
 
-LEN equ  $ - text
+
 
 .CODE
-
 CAPITAL_SMALL PROC 
 
-    LEA si, text   
+
+   ; CALL POINT
+    LEA si, text
     mov bx,0
     MOV AH,02H
 
 Next:
     ; Make frist letter in paragraph capital letter
+    
     CMP BX,0
     JNE B
         MOV DL,[SI+BX];LETTERS
         AND DL,11011111B
+		MOV [SI+BX],DL
         INT 21H 
         INC BX
     B:
@@ -32,33 +34,36 @@ Next:
   
   
     INC     bx
-    CMP     bx, LEN
+    CMP     bx, HELLO_LEN
     JNE     Next
-    
-    
-CAPITAL_SMALL ENDP
-	
-;-----------------------------------
-	
+   
+  
+
       ;SMALL METHOD CONVERT CAPTIAL LETTER TO SMALL LETTER
-SMALL_LETTER PROC NEAR
-
-	OR [si + bx],00100000B
-	MOV     DL,[si + bx]
-	RET
-	
-SMALL_LETTER ENDP
-	
-;-----------------------------------
-	
+      ;--------------------------------------------------
+    SMALL_LETTER PROC NEAR
+        OR [si + bx],00100000B
+        MOV     DL,[si + bx]
+        RET
+    SMALL_LETTER ENDP
      ;to make capital letter at the beginning of each sentence
-CAPS PROC NEAR
+     ;------------------------------------------------------
+    CAPS PROC NEAR
+     INC     bx
+     MOV DL,[SI+BX];LETTERS
+     AND DL,11011111B
+	 MOV [SI+BX],DL
+     INT 21H 
+    RET 
+    CAPS ENDP
+    ;move postion of pointer
+    ;---------------------
+    POINT PROC NEAR
+      mov dh, 0
+      mov dl, 0
+      mov bh, 0
+      mov ah, 2
+      int 10h
+      RET
+      POINT ENDP
 
-	INC     bx
-	MOV DL,[SI+BX];LETTERS
-	AND DL,11011111B
-	INT 21H 
-	RET 
-	
-CAPS ENDP
-    
