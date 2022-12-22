@@ -1,5 +1,5 @@
 
-# INTRo
+# INTRoCancel changes
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
 
@@ -37,7 +37,7 @@ StringIFY program consist of main.asm file
 
 ### Implemented Features
 - Read & Write Data from and to Files directly
-- Position punctuation marks & correct capitalization 
+- make the first character of every line cap & make the rest of the line small 
 - Remove extra white spaces & add spaces if it's required
 - Remove successive duplicate words & incorrect symbols from the string
 
