@@ -31,18 +31,13 @@ data or text and reach the required format.
 
 ## Screenshots
 
-Original String            | 
-:-------------------------:|
-  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" height="400" /> |
 
 
-
-
-Position punctuation marks & correct capitalization              |  Remove extra white spaces & add spaces if it's required
+Read & Write Data from and to Files directly             |  Position punctuation marks & correct capitalization 
 :-------------------------:|:-------------------------:
   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.jpg" width="500" />
 
-Remove successive duplicate words & incorrect symbols            |  Output String 
+ Remove extra white spaces & add spaces if it's required          |  Remove successive duplicate words & incorrect symbols  
 :-------------------------:|:-------------------------:
   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.jpg" width="500" />  |    <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.jpg" width="500" />
 
