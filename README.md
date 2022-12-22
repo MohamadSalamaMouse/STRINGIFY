@@ -26,10 +26,11 @@ STRINGIFY is a String manipulation program which we developed in 8086 assembly l
 
 STRINGIFY program consist of main.asm file 
 program files
-<ul dir="auto">
+<ol dir="auto">
 <li>
 <p dir="auto"><strong>app.asm</strong></p>
 </li>
+ 
 <li>
 <p dir="auto"><strong>caps.inc</strong></p>
 </li>
@@ -42,7 +43,7 @@ program files
 <li>
 <p dir="auto"><strong>ui.inc</strong></p>
 </li>
-</ul>
+</ol>
 
 
 
