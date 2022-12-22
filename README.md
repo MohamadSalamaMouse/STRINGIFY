@@ -95,7 +95,7 @@ Remove successive duplicate words            |  Execute all operations together
 
 ---
 ## Demo video
-To get more information we uploaded a demo video  on google drive for a little bit more explanation, you can access video by pressing [Here]()
+To get more information we uploaded a demo video for more explanation, which you can access video by pressing [Here]()
 
 ## Feedback
 IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
