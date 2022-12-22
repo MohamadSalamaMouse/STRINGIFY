@@ -29,7 +29,13 @@ String-manipulation also involve more complicated tasks like:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+title 1             |  title 2 
+:-------------------------:|:-------------------------:
+  <img src="/img1.png" width="100" />  |    <img src="/img1.png" width="100" />
+
+title 3             |  title 4 
+:-------------------------:|:-------------------------:
+  <img src="/img1.png" width="100" />  |    <img src="/img1.png" width="100" />
 
 
 
