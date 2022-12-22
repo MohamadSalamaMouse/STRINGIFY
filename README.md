@@ -1,5 +1,5 @@
 
-# INTRoCancel changes
+# INTRO
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
 
@@ -10,7 +10,6 @@ data or text and reach the required format.
  - Rearranging white spaces
  - Positioning punctuation marks
  
-
 
 ##### String-manipulation also involve more complicated tasks like: 
 - Removing duplicated words
@@ -31,7 +30,7 @@ StringIFY program consist of main.asm file
 
 
 |  Program Flow-chart             | 
-| -------             |
+| -------                         |
 | <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/Activitydiagram1.png" width="1000" />   | 
 
 
@@ -78,7 +77,7 @@ Readstring from and to Files directly             |  Position punctuation marks 
 
 ---
 ## Demo video
-To get more information we have a demo video uploaded on google drive for a little bit more explanation, you reach video by pressing [Here]()
+To get more information we have a demo video uploaded on google drive for a little bit more explanation, you can access video by pressing [Here]()
 
 ## Feedback
 IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
@@ -88,6 +87,6 @@ IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.m
 
 #### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
 - [@Mohamad Salama Mouse | section 8](https://github.com/MohamadSalamaMouse)
-- [@Ahmed Mohsen   | Section  ?](https://github.com/PrinceEGY)
+- [@Ahmed Mohsen  Awad | Section 1 ](https://github.com/PrinceEGY)
 - [@Mohamed Abo El-Seoud | Section 8](https://github.com/MAES-Pyramids)
 
