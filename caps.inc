@@ -1,70 +1,74 @@
 .MODEL SMALL
+.DATA
 
-
+FLAG DW 1
 
 .CODE
+
 CAPITAL_SMALL PROC 
 
+	LEA DI, FINAL_OUTPUT
 
-   ; CALL POINT
-    LEA si, FINAL_OUTPUT
-    mov bx,0
-    MOV AH,02H
-
-Next1:
-    ; Make frist letter in paragraph capital letter
-    
-    CMP BX,0
-    JNE B
-        MOV DL,[SI+BX];LETTERS
-        AND DL,11011111B
-		MOV [SI+BX],DL
-        ;--INT 21H 
-        INC BX
-    B:
-   
-    ;MOV DL,[SI+BX];LETTERS
-    CALL SMALL_LETTER
-  ;---  INT 21H
-     ;condition to know beginning of each sentence
-    CMP DL,'.'
-    JNE A
-        CALL CAPS
-    A:
-  
-  
-    INC     bx
-    CMP     bx, TEXT_LEN
-    JNE     Next1
-	
-    RET
+	Next1:
+		CMP BYTE PTR [DI], '$' ; Return from function if the end of string
+		JZ Z
+		
+		CALL CHECK_ALPHA	
+		CMP DL, 1
+		JZ B				; If the current char is alpha, jmp to check it
+		
+		CALL CHECK_DOT		; Check if the current char is dot, if so, it sets FLAG, clear it otherwise
+		JMP A
+		
+		B:
+			CMP FLAG, 1		
+			JE TO_CAPITAL	; If the last char was dot, then make the current char capital, small otherwise
+			TO_SMALL:
+				CALL SMALL_LETTER
+				JMP A
+			TO_CAPITAL:
+				CALL CAPITAL_LETTER
+				MOV FLAG, 0
+				
+		A:	  
+			INC DI
+			JMP Next1
+			
+		Z:
+			RET
+			
 CAPITAL_SMALL ENDP  
 
-      ;SMALL METHOD CONVERT CAPTIAL LETTER TO SMALL LETTER
-      ;--------------------------------------------------
-    SMALL_LETTER PROC NEAR
-        OR BYTE PTR [si + bx],00100000B
-        MOV     DL,[si + bx]
-        RET
-    SMALL_LETTER ENDP
-     ;to make capital letter at the beginning of each sentence
-     ;------------------------------------------------------
-    CAPS PROC NEAR
-     INC     bx
-     MOV DL,[SI+BX];LETTERS
-     AND DL,11011111B
-	 MOV [SI+BX],DL
-    ;--- INT 21H 
-    RET 
-    CAPS ENDP
-    ;move postion of pointer
-    ;---------------------
-    POINT PROC NEAR
-      mov dh, 0
-      mov dl, 0
-      mov bh, 0
-      mov ah, 2
-      int 10h
-      RET
-      POINT ENDP
 
+;--------------------------------------------------
+
+SMALL_LETTER PROC ; Converting letter to small
+
+	OR BYTE PTR [DI],00100000B
+	RET
+	
+SMALL_LETTER ENDP
+
+;------------------------------------------------------
+
+CAPITAL_LETTER PROC ; Converting letter to capital
+
+	AND BYTE PTR [DI],11011111B
+	RET
+	
+CAPITAL_LETTER ENDP
+
+;------------------------------------------------------
+
+CHECK_DOT PROC	; if current char is dot, Set the FLAG variable to 1, 0 otherwise
+	CMP FLAG, 1
+	JE ISDOT
+	
+	MOV FLAG, 1
+	CMP BYTE PTR [DI], '.'
+	JE ISDOT
+	MOV FLAG, 0
+	
+	ISDOT:
+		RET
+CHECK_DOT ENDP
