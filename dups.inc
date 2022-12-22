@@ -5,8 +5,8 @@
 	;Your data items 
 	BUFFER DB 255 DUP ('$')
 	CURRENT DB 255 DUP('$')
-	CLEAN_TEXT DB 255 DUP(0)
-	IDX DB 0
+	CLEAN_TEXT DB 255 DUP('$')
+	IDX DW 0
 
 .CODE 
 	
@@ -16,7 +16,6 @@
 	REMOVE_DUP PROC 
 
 		LEA SI, TEXT
-		LEA IDX, CLEAN_TEXT
 		CHECK:
 			CMP BYTE PTR [SI], '$'
 			JZ EXIT
@@ -27,7 +26,8 @@
 			JZ NEXT
 			
 			; MOVE WORD TO CLEAN_TEXT
-			
+			CALL MOVE_TO_CLEAN
+
 			NEXT:
 				
 				LEA DI, BUFFER
@@ -39,7 +39,7 @@
 				
 				POP SI
 				; MOV NON-ALPHA CHARACTERS TO CLEAN AND INC SI
-				ADD SI, 2
+				CALL MOVE_NON_ALPHA
 				
 				JMP CHECK
 					
@@ -63,13 +63,14 @@
 		FINISH:
 			CMP SI, DI
 			JE DONE
-			MOV AX, [SI]
-			MOV [BX], AX
+			MOV AL, [SI]
+			MOV [BX], AL
 			INC SI
 			INC BX
 			JMP FINISH
 			
 		DONE:
+			DEC SI
 			RET
 	GET_NEXT_WORD ENDP
 	
@@ -89,7 +90,6 @@
 		
 		NOT_FOUND:
 			MOV DL, 0
-			DEC DI
 
 		TOEND:
 			RET
@@ -142,3 +142,46 @@
 		
 		RET
 	COPY_TO_BUFFER ENDP
+		
+	;-----------------------------------
+	
+	MOVE_TO_CLEAN PROC
+		LEA DI, CURRENT
+	
+		CONTINUE:
+			MOV BX, IDX
+			CALL CHECK_ALPHA
+			CMP DL, 1
+			JNZ ISDONE
+			MOV AL, [DI]
+			MOV CLEAN_TEXT[BX], AL
+			INC IDX
+			INC DI
+			
+			JMP CONTINUE
+		
+		ISDONE:
+			RET
+	MOVE_TO_CLEAN ENDP
+		
+	;-----------------------------------
+	
+	MOVE_NON_ALPHA PROC
+		INC SI
+		CHECKING:
+			CMP BYTE PTR [SI], '$'
+			JZ GOEXIT
+			MOV BX, IDX
+			MOV DI, SI
+			CALL CHECK_ALPHA
+			CMP DL, 1
+			JZ GOEXIT
+			MOV AL, [SI]
+			MOV CLEAN_TEXT[BX], AL
+			INC IDX
+			INC SI
+			JMP CHECKING
+		
+		GOEXIT:
+			RET
+	MOVE_NON_ALPHA ENDP
