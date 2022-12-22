@@ -82,13 +82,13 @@ Remove successive duplicate words            |  Execute all operations together
 1- Clone the project
 
 ```bash
-  git clone https://github.com/MohamadSalamaMouse/Natural-Language-Processing.git
+  git clone https://github.com/MohamadSalamaMouse/STRINGIFY
 ```
 
 2- Go to the project directory
 
 ```bash
-  cd Natural-Language-Processing
+  cd STRINGIFY
 ```
 
 3- Run the main.asm using any 8086 assembler. Note: [Turbo Assembler](https://sourceforge.net/projects/guitasm8086/)  is preferred cause we built project using it.
