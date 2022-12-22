@@ -1,5 +1,5 @@
 
-# Introduction
+# INTRO
 
 String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
@@ -25,17 +25,12 @@ data or text and reach the required format.
 <h3 align="center"> What we are trying to do here is  creating a command line interface <i>-Text Editor-</i> which also has the ability to perform some string manipulation techniques</h3>
 
 
-## Documentation
-Stringify is a String manipulation program 
-
+## STRINGIFY Documentation
+Stringify is a String manipulation program can 
 
 Stringify program consist of main.asm file 
 
-
-
-##### Notes: String size has  maximum value of entered element is 65536 (best case)
-
-
+##### Notes: StringIFY program has an input data limitaion of  or we will face overflow excption so please ,don't try to use data size above the limitation
 
 
 |  Program Flow-chart             | 
@@ -50,7 +45,6 @@ Stringify program consist of main.asm file
 
 
 ## Features
-
 - Read & Write Data from and to Files directly
 - Position punctuation marks & correct capitalization 
 - Remove extra white spaces & add spaces if it's required
@@ -87,7 +81,7 @@ Readstring from and to Files directly             |  Position punctuation marks 
 
 
 ## Demo video
-To get more information we have a demo video uploaded on google drive for explaning project more, you reach video by pressing [Here]()
+To get more information we have a demo video uploaded on google drive for a little bit more explanation, you reach video by pressing [Here]()
 
 ## Feedback
 IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
