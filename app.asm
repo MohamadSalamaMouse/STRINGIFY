@@ -8,7 +8,9 @@ include UI.inc
 .DATA       
 
 TEXT DB "often  time time  in lIfE, What  is eASy to  do is,not worTH worth it.SuRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
+INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
 TEXT_LEN EQU  $ - TEXT
+NEWLINE DB 10,13,"$"
 FINAL_OUTPUT DB 255 DUP('$')
 
 .CODE 
@@ -27,8 +29,15 @@ FINAL_OUTPUT DB 255 DUP('$')
         
         GET_OPTION:
             CALL OPTIONS
-            MOV AH, 1
+            LEA DX,INPUTLINE
+            CALL PRINT
+            
+            MOV AH,1
             INT 21H
+            LEA DX, NEWLINE
+            CALL PRINT
+            CALL PRINT
+            CALL PRINT
             
             CMP AL, '1'
             JE OPT_1
@@ -46,6 +55,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL CAPITAL_SMALL
                 LEA DX, FINAL_OUTPUT
                 CALL PRINT
+                LEA DX, NEWLINE
+                CALL PRINT
                 JMP GET_OPTION
                 
             OPT_2:
@@ -54,6 +65,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL REMOVE_SPACES
                 LEA DX, FINAL_OUTPUT
                 CALL PRINT
+                LEA DX, NEWLINE
+                CALL PRINT
                 JMP GET_OPTION
                 
             OPT_3: 
@@ -61,6 +74,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL REMOVE_DUP
                 LEA DX, FINAL_OUTPUT
                 CALL PRINT
+                 LEA DX, NEWLINE
+                 CALL PRINT
                 JMP GET_OPTION
                 
             OPT_4:
@@ -70,6 +85,8 @@ FINAL_OUTPUT DB 255 DUP('$')
                 CALL ADD_SPACES
                 CALL REMOVE_SPACES
                 LEA DX, FINAL_OUTPUT
+                CALL PRINT
+                LEA DX, NEWLINE;NEW LINE
                 CALL PRINT
                 JMP GET_OPTION
                 
