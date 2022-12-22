@@ -7,7 +7,7 @@
 .code
 
 
-	
+
 ;--------------------------------------------------------------------------
 ;1- Remove extra white spaces from the whole text
 ; "Every   thing is	 good,  right?" --> "Every thing is good, right?"
@@ -29,11 +29,11 @@
 		;mov   di,si
 		;mov   bx,si
 
-;source
+		;source
 		mov   ax,SEG text
 		mov   ds,ax
 		mov   si,OFFSET text
-;destination
+		;destination
 		mov   ax,SEG text
 		mov   es,ax
 		mov   di,OFFSET text
