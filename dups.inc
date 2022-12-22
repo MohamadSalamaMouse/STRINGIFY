@@ -44,6 +44,9 @@
 				JMP CHECK
 					
 		EXIT:
+			LEA SI, CLEAN_TEXT
+			MOV BX, 255
+			CALL SAVE_TEXT
 			RET
 		
 	REMOVE_DUP ENDP
