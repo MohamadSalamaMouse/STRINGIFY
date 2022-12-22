@@ -1,20 +1,22 @@
 
 
-# String-manipulation & Processing
+# Introduction
 
- String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
+String manipulation is a concept beneath NLP's general term, which refers to the process of changing or modifying strings, in order to manipulate 
 data or text and reach the required format.
  <br>
 
 
- String-manipulation can be used to perform small actions like:
+##### String-manipulation can be used to perform small actions like:
+
 <img align="right" alt="GIF" height="160px" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" /> 
+
  - Rearranging white spaces
  - Positioning punctuation marks
  
 
 
-String-manipulation also involve more complicated tasks like: 
+##### String-manipulation also involve more complicated tasks like: 
 - Removing duplicated words
 - Correcting spelling and grammar rules
 - Finding substrings & concatenating strings
