@@ -4,23 +4,22 @@
 	afterR DB 'text after removing spaces was: ',10,13,'$' 
 	beforeD DB 'text before adding spaces was: ',10,13,'$'  
 	afterD DB 'text after adding spaces was: ',10,13,'$'  	
+	AddSpaceOutput DB 255 DUP ("$")
 .code
 
-
-	
 ;--------------------------------------------------------------------------
 ;1- Remove extra white spaces from the whole text
 ; "Every   thing is	 good,  right?" --> "Every thing is good, right?"
 
 	REMOVE_SPACES PROC far
 	
-		LEA DX , beforeR	
-		mov ah , 09
-		int 21h
+		;LEA DX , beforeR	
+		;mov ah , 09
+		;int 21h
 	
-	    LEA DX , text   
-		mov ah , 09
-        int 21h
+	    ;LEA DX , FINAL_OUTPUT   
+		;mov ah , 09
+        ;int 21h
 
 		;mov   ax,SEG text
 		;mov   ds,ax
@@ -29,19 +28,19 @@
 		;mov   di,si
 		;mov   bx,si
 
-;source
-		mov   ax,SEG text
+		;source
+		mov   ax,SEG FINAL_OUTPUT
 		mov   ds,ax
-		mov   si,OFFSET text
-;destination
-		mov   ax,SEG text
+		mov   si,OFFSET FINAL_OUTPUT
+		;destination
+		mov   ax,SEG FINAL_OUTPUT
 		mov   es,ax
-		mov   di,OFFSET text
+		mov   di,OFFSET FINAL_OUTPUT
 		mov   bx,di
 		
 		; ds:si = source pointer to read char by char
 		; es:di = destination pointer to write modified string
-		; bx = text pointer for compare during second phase
+		; bx = FINAL_OUTPUT pointer for compare during second phase
 		
 	xor   cx,cx  ; cx = 0, counts spaces to copy
 	copyLoop:
@@ -73,13 +72,13 @@
 		stosb           ; write the '#' at final position
 	
 		
-		LEA DX , afterR	
-		mov ah , 09
-		int 21h
+		;LEA DX , afterR	
+		;mov ah , 09
+		;int 21h
 		
-		LEA DX , text	
-		mov ah , 09
-		int 21h
+		;LEA DX , FINAL_OUTPUT	
+		;mov ah , 09
+		;int 21h
 		
 		ret
 		
@@ -91,15 +90,15 @@
 
 	 ADD_SPACES PROC far
 	 
-	 	LEA DX , beforeD	
-		mov ah , 09
-		int 21h
+	 	;LEA DX , beforeD	
+		;mov ah , 09
+		;int 21h
 		
-		LEA DX , text	
-		mov ah , 09
-		int 21h
+		;LEA DX , FINAL_OUTPUT	
+		;mov ah , 09
+		;int 21h
 		
-		LEA SI, text ; Initialize SI to point to the start of the string
+		LEA SI, FINAL_OUTPUT ; Initialize SI to point to the start of the string
 		LEA DI, AddSpaceOutput ; Initialize DI to point to the start of the output
 		
 	loopp:	
@@ -125,20 +124,24 @@
 	ADDSPACE:
 		MOV [DI], AL ; Copy the comma to the output
 		INC DI ; Increment DI to point to the next character
-		MOV [DI], ' ' ; Add a space to the output
+		MOV byte PTR [DI], ' ' ; Add a space to the output
 		INC DI ; Increment DI to point to the next character
 		INC SI ; Increment SI to point to the next character
 		JMP LOOPp ; Jump back to the start of the loop
 		
 	terminate2:	
 	
-		LEA DX , afterD	
-		mov ah , 09
-		int 21h
+		LEA Si , AddSpaceOutput
+		mov  BX , 255
+		call SAVE_TEXT
+	
+		;LEA DX , afterD	
+		;mov ah , 09
+		;int 21h
 		
-		LEA DX , AddSpaceOutput	
-		mov ah , 09
-		int 21h
+		;LEA DX , AddSpaceOutput	
+		;mov ah , 09
+		;int 21h
 		
 	ret
 	
