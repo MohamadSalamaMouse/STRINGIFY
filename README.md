@@ -99,7 +99,7 @@ Remove successive duplicate words            |  Execute all operations together
 
 ---
 ## Demo video
-To get more information we uploaded a demo video for more explanation, which you can access by pressing [Here]()
+To get more information we uploaded a demo video for more explanation, which you can access by pressing [Here](https://www.youtube.com/watch?v=473Y_2Q3O3g)
 
 ## Team Members
 
