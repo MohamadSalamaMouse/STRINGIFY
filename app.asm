@@ -2,7 +2,7 @@ include caps.inc
 include dups.inc
 include spaces.inc
 include UI.inc
-
+;include file.inc
 .386
 .MODEL small
 
@@ -14,7 +14,9 @@ INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
 ExitST DB "5-Exit the program",10,13,"$"
 TEXT_LEN EQU  $ - TEXT
 NEWLINE DB 10,13,"$"
-
+;FILE NAME 
+fname db "OUTPUT.txt",0
+fhandle dw ?
 
 FINAL_OUTPUT DB 255 DUP('$')
 
@@ -139,9 +141,12 @@ FINAL_OUTPUT DB 255 DUP('$')
             jz  Rendering
             CMP AL, '5'
             JE TERM
-
+           
         
         TERM:
+         ;write file to store data in file
+         CALL WRITEFILE
+
         .EXIT
        
     MAIN ENDP
@@ -173,6 +178,51 @@ FINAL_OUTPUT DB 255 DUP('$')
         RET
         
     SAVE_TEXT ENDP
+    
+    ;---------------------------------------
+    
+    
+    
+     WRITEFILE PROC NEAR
+
+;create  anew file
+        mov ah,3ch
+        mov dx,OFFSET fname   
+        mov cl,0
+        int 21h
+        mov fhandle,ax
+
+
+;open an existing file
+                           
+        mov ah,3dh
+        lea dx,fname
+        mov al,2
+        int 21h
+        mov fhandle ,ax 
+           
+    ;-----------------
+ 
+    ;--------------
+   
+    ;how to write text in file 
+        mov ah,40h
+        mov bx,fhandle   
+            
+        MOV dx,OFFSET FINAL_OUTPUT
+        MOV CX,255
+        int 21h
+    
+    ; close a file
+         mov ah,3eh
+         mov bx,fhandle
+         int 21h
+         
+         RET
+     WRITEFILE ENDP
+
+
+
 
     
 END MAIN
