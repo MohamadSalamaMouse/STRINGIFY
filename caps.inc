@@ -8,6 +8,7 @@ FLAG DW 1
 CAPITAL_SMALL PROC 
 
 	LEA DI, FINAL_OUTPUT
+	mov FLAG , 1
 
 	Next1:
 		CMP BYTE PTR [DI], '$' ; Return from function if the end of string

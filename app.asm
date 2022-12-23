@@ -7,22 +7,33 @@ include UI.inc
 .MODEL small
 
 .DATA       
-VAR DW 255 DUP('$')
+
 TEXT DB "often time time  in lIfE, What  is eASy to  do is,not worTH worth it.suRe,crashing on on     on the  couch!And  WAtcHing the.the nEwest, episode,of your!fAVorite sHow!is A  pleasuRable?exPerience.",10,13,"$"
-Back_TO_Options DB"0-Go Back To Main Menu",10,13,"$"
-INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
-ExitST DB "5-Exit the program",10,13,"$"
 TEXT_LEN EQU  $ - TEXT
+;-----------------------------------------------------
+save_into_file DB "1-Save result into output file",10,13,"$"
+Back_TO_Options DB"2-Go Back To Main Menu",10,13,"$"
+ExitST DB "2-Exit the program",10,13,"$"
+;-----------------------------------------------------
+INPUTLINE DB "ENTER YOUR CHOOSE: ","$"
+msg db 'Enter your string: $'
+;-----------------------------------------------------
 NEWLINE DB 10,13,"$"
-;FILE NAME 
-fname db "OUTPUT22.txt",0
-fhandle dw ?
+;-----------------------------------------------------
 BUFFER1 DB 255 DUP("$")
 
-msg db 'Enter your error string: $'
+fname db "temp.txt",0
+fhandle dw ?
 
+fname_read db "input.TXT",0
+fhandle_read dw ?
 
+fname_output db "OUTPUT.TXT",0
+fhandle_output dw ?
+;-----------------------------------------------------
 FINAL_OUTPUT DB 255 DUP('$')
+;-----------------------------------------------------
+
 
 .CODE 
  
@@ -37,10 +48,58 @@ FINAL_OUTPUT DB 255 DUP('$')
         LEA SI, TEXT
         CALL SAVE_TEXT
         ;----------------------
-        ;--------EDIT NEW
-      CALL FILEHANDLING
+
+         call load_function
+         LEA DX,INPUTLINE
+         CALL PRINT
+            
+         MOV AH,1
+         INT 21H
+         LEA DX, NEWLINE
+         CALL PRINT
+         
+        CMP AL, '1'
+        JE Rendering
+        CMP AL, '2'
+        JE loadingOPT_2
+        CMP AL, '3'
+        JE loadingOPT_3
+        
+         
+                  
+          loadingOPT_2:
+          call FILEHANDLING
+          jmp Rendering
+
+                
+          loadingOPT_3:
+           mov ah,3dh
+           lea dx,fname_read
+           mov al,2
+           int 21h
+           mov fhandle_read ,ax 
+        
+          mov ah,3fh
+          MOV DX,0000H
+          lea dx,BUFFER1
+          mov cx,255
+          mov bx,fhandle_read
+          int 21h 
+          MOV DX,0000H
+          LEA SI,BUFFER1
+       
+          MOV BX, 255
+         CALL SAVE_TEXT 
+         jmp Rendering
+         
+             ; close a file
+             mov ah,3eh
+             mov bx,fhandle_read
+             int 21h
+
         
         ;----------------------
+        
         Rendering :
             LEA DX, NEWLINE
             CALL PRINT 
@@ -122,6 +181,8 @@ FINAL_OUTPUT DB 255 DUP('$')
         
         ;----------------------
         Continue_option:
+            LEA DX,save_into_file
+            call print
             LEA DX,Back_TO_Options
             call print
             LEA DX,ExitST
@@ -136,8 +197,7 @@ FINAL_OUTPUT DB 255 DUP('$')
             MOV AH,1
             INT 21H
             
-             LEA DX, NEWLINE
-             CALL PRINT
+            LEA DX, NEWLINE
              CALL PRINT
              CALL PRINT
              CALL PRINT
@@ -145,17 +205,39 @@ FINAL_OUTPUT DB 255 DUP('$')
 
 
 
-            
-             CMP AL, '0'
+
+            CMP AL, '1'
+            jz  store_files
+            CMP AL, '2'
             jz  Rendering
-            CMP AL, '5'
+            CMP AL, '3'
             JE TERM
            
+            
+       store_files:
+       mov ah,3ch
+       mov dx,OFFSET fname_output   
+       mov cl,0
+       int 21h
+       mov fhandle_output,ax
+       
+       ;open an existing file
+        mov ah,3dh
+        lea dx,fname_output
+        mov al,2
+        int 21h
+        mov fhandle_output ,ax 
         
-        TERM:
-         ;write file to store data in file
+    ;  how to write text in file 
+       mov ah,40h
+       mov bx,fhandle_output   
+           
+       LEA dx,FINAL_OUTPUT
+       MOV CX,255
+       int 21h
         
-
+      jmp Rendering
+         TERM:
         .EXIT
        
     MAIN ENDP
@@ -210,9 +292,9 @@ FILEHANDLING PROC
         mov fhandle ,ax 
         
         ;----------------
-        CALL  ReadFromScreen
+       CALL  ReadFromScreen
         ;-------------
-         ;  how to write text in file 
+      ;  how to write text in file 
        mov ah,40h
        mov bx,fhandle   
            
@@ -221,7 +303,7 @@ FILEHANDLING PROC
        int 21h
         ;------------
         
-        ;how to read text from a file
+      ;how to read text from a file
       mov ah,3fh
       MOV DX,0000H
       lea dx,BUFFER1
@@ -230,17 +312,11 @@ FILEHANDLING PROC
       int 21h 
       MOV DX,0000H
       
-     LEA SI,BUFFER1
-    ;  MOV VAR,DX
-     MOV BX, 255
-    CALL SAVE_TEXT
+      LEA SI,BUFFER1
+      MOV BX, 255
+      CALL SAVE_TEXT
       
-      ;  mov ah,09h
-      ; int 21h
-    ; close a file
-    ;mov ah,3eh
-    ; mov bx,fhandle
-    ; int 21h
+
         
      
      RET

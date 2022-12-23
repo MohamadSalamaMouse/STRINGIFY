@@ -17,6 +17,17 @@ L12 DB '            ||    5 - Exit the program                          ||',0ah,
 L13 DB '            ||                                                  ||',0ah,0dh,'$'
 L14 DB '            ||----***********----***********----***********-----||',0ah,0dh,'$'
 
+
+Ll6 DB  '            ||==================================================||',0ah,0dh,'$'
+Ll7 DB  '            ||                                                  ||',0ah,0dh,'$'
+Ll8 DB  '            ||  How to do you want to enter data ??             ||',0ah,0dh,'$'
+Ll9 DB  '            ||                                                  ||',0ah,0dh,'$'
+Ll10 DB '            ||    1 - Use data stored implicitly  in program    ||',0ah,0dh,'$'
+Ll11 DB '            ||    2 - Enter data manually through console       ||',0ah,0dh,'$'
+Ll12 DB '            ||    3 - Load data from file                       ||',0ah,0dh,'$'
+Ll13 DB '            ||                                                  ||',0ah,0dh,'$'
+Ll14 DB '            ||----***********----***********----***********-----||',0ah,0dh,'$'
+
 .CODE 
 
 WAKE_UP PROC
@@ -48,6 +59,57 @@ WAKE_UP PROC
 	
 	RET
 WAKE_UP ENDP
+; -------------------------------
+load proc 
+
+	LEA DX, Ll6
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll7
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll8
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll9
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll10
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll11
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll12
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll13
+	CALL PRINT
+	
+		call delay
+	
+	LEA DX, Ll14
+	CALL PRINT
+	
+		call delay
+	
+	RET
+
+load endp
 
 ; -------------------------------
 
@@ -108,3 +170,8 @@ delay proc  near
   ret
 delay endp  
 
+load_function proc 
+	call WAKE_UP
+	call load
+	ret
+load_function endp
