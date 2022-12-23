@@ -27,21 +27,24 @@ STRINGIFY is a String manipulation program that we developed in 8086 assembly la
 STRINGIFY program consists of main.asm file where we reference and include all other files and functions and we also have four files more which are : 
 <ol dir="auto">
 <li>
-<p dir="auto"><strong>ui.inc ------->></strong>The main file used for rendering the program, also includes rendering related functions such as function implement delay </p>
+<p dir="auto"><strong>ui.inc ------->></strong>The main file used for rendering the program, also includes rendering related functions such as function implement delay.</p>
 </li>
  
 <li>
-<p dir="auto"><strong>caps.inc  ---->></strong>Includes functions to capitalize the beginning of the sentence and be sure that the rest of the sentence litters is lowercase  </p>
+<p dir="auto"><strong>caps.inc  ---->></strong>Includes functions to capitalize the beginning of the sentence and be sure that the rest of the sentence litters is lowercase.</p>
 </li>
 
 <li>
-<p dir="auto"><strong>spaces.inc  -->></strong>Includes functions to remove extra white spaces  and also add white space after common punctuation marks</p>
+<p dir="auto"><strong>spaces.inc  -->></strong>Includes functions to remove extra white spaces  and also add white space after common punctuation marks.</p>
 </li>
 
 <li>
-<p dir="auto"><strong>dups.inc ---->></strong>Includes functions to remove successive duplicates words</p>
+<p dir="auto"><strong>dups.inc ---->></strong>Includes functions to remove successive duplicates words.</p>
 </li>
 
+<li>
+<p dir="auto"><strong>files.inc ---->></strong>Includes functions to handle and deal with files.</p>
+</li>
 
 </ol>
 
@@ -62,7 +65,7 @@ STRINGIFY program consists of main.asm file where we reference and include all o
 - Implementing spelling Corrections  and grammar rules validation
 -
 
-#### <p align="center">Note: STRINGIFY program has an input data size limitation of 250 bytes which means that the data processed by the program can't be more than 250 character or we will face an overflow exception if size exceeds the limitation</p>
+#### <p align="center">Note: STRINGIFY program has an input data size limitation of 256 bytes which means that the data processed by the program can't be more than 256 character or we will face an overflow exception if size exceeds the limitation</p>
    
 ---
 
@@ -104,7 +107,7 @@ IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.m
 ## Team Members
 
 #### Project done under supervision of  Prof. [@Sara El-Metwally](https://github.com/SaraEl-Metwally) by:
-- [@Mohamad Salama Mouse ](https://github.com/MohamadSalamaMouse) | section 8
+- [@Mohamad Salama Mousa ](https://github.com/MohamadSalamaMouse) | section 8
 - [@Ahmed Mohsen Awad    ](https://github.com/PrinceEGY)     | Section 1
 - [@Mohamed Abo El-Seoud ](https://github.com/MAES-Pyramids) | Section 8
 
