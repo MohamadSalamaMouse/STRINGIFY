@@ -63,7 +63,8 @@ STRINGIFY program consists of main.asm file where we reference and include all o
 
 ### Recommended future Features
 - Implementing spelling Corrections  and grammar rules validation
--
+- Add more text processing capabilities
+- Fix the limitation of 256B size
 
 #### <p align="center">Note: STRINGIFY program has an input data size limitation of 256 bytes which means that the data processed by the program can't be more than 256 character or we will face an overflow exception if size exceeds the limitation</p>
    
@@ -99,10 +100,6 @@ Remove successive duplicate words            |  Execute all operations together
 ---
 ## Demo video
 To get more information we uploaded a demo video for more explanation, which you can access by pressing [Here]()
-
-## Feedback
-IF you have any feedback, please reach out to us at mohamed.11021@stemgharbiya.moe.edu.eg
-
 
 ## Team Members
 
